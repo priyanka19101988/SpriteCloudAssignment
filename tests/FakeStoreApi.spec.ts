@@ -6,6 +6,7 @@ const BASE_URL = userConfig.base_url;
 test.describe('FakeStoreAPI E2E Scenarios', () => {
   test('1. Perform a successful login', async () => {
     const context = await request.newContext();
+    console.log("Base URL is:", BASE_URL);
     const response = await context.post(`${BASE_URL}/auth/login`, {
       data: {
         username: 'mor_2314',
