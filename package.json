@@ -1,8 +1,10 @@
 {
-  "name": "playwrightdemo",
+  "name": "spritecloudassignment",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test tests/*.spec.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
