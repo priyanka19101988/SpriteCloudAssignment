@@ -17,6 +17,9 @@ test.describe('FakeStoreAPI E2E Scenarios', () => {
         password: '83r5^_'
       }
     });
+    console.log("Login response status:", response.status());
+    console.log("Login response body:", await response.text()); 
+    console.log("Login response headers:", response.headers());
     expect(response.ok()).toBeTruthy();
     const body = await response.json();
     expect(body).toHaveProperty('token');
