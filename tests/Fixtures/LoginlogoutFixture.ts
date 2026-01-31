@@ -22,7 +22,7 @@ export const test = basetest.extend<LoginDetailsFixture>({
       await use(logoutFixture);
       await logoutFixture.logoutTheApplication();
       await console.log("Logout successful");
-     // page.close();
+      //await page.close();
     },
 
     FailedLoginPage : async({page},use)=>
@@ -32,8 +32,8 @@ export const test = basetest.extend<LoginDetailsFixture>({
       await failedLoginPage.loginapplicationWithInvalidCredentials("invalidUser","invalidPass");
       await use(failedLoginPage);
       await console.log("Invalid login attempted");
-     // page.close();
+      await page.close();
     }
-
+ 
 })
 

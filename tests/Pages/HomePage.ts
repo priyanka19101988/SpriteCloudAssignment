@@ -17,7 +17,7 @@ HomePage{
         this.addItem2ToCart = page.locator('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]');
         this.itemName = page.locator('.inventory_item_name');
         this.cartIcon = page.locator('[data-test="shopping-cart-link"]');
-        this.sortDropDown = page.locator('[data-test="product_sort_container"]');
+        this.sortDropDown = page.locator('//select[@class="product_sort_container"]');
     }
 
     async addItemToCart(){
@@ -27,8 +27,9 @@ HomePage{
     }
 
     async sortTheItems(sortBy : string){
-        await this.sortDropDown.waitFor({ state: 'visible' });
-        await this.sortDropDown.selectOption(sortBy);
+        //await this.sortDropDown.waitFor({ state: 'visible' });
+        await this.sortDropDown.selectOption({ value: sortBy });
+    
     }
 
     async clickOnCartIcon(){

@@ -2,13 +2,13 @@ import { test } from "./Fixtures/TestFixtures.ts"
 import {expect} from "@playwright/test"
 import { LoginPage } from "./Pages/LoginPage.ts";
 
-test('validation of the final price',async({page,loginPage,homepage,cartpage,logoutFixture,Checkout_yourInformationPage,overviewpage}) =>{
-
+test.describe('SauceDemoUI Test Scenarios', () => {
+test('1.validation of the final price',async({page,loginPage,homepage,cartpage,logoutFixture,Checkout_yourInformationPage,overviewpage}) =>{
+   
    await expect(page).toHaveTitle("Swag Labs");
    await homepage.addItemToCart();
    await homepage.clickOnCartIcon();
    await expect(cartpage.addedItem).toHaveText("Sauce Labs Backpack");
-  // await expect(cartpage.checkoutButton).toBeVisible();
    await cartpage.clickOnCheckoutButton();
    await Checkout_yourInformationPage.enterAllDetails("priya","shina","12345");
    expect(await overviewpage.getFinalPrice()).toBe(49.66);
@@ -16,8 +16,9 @@ test('validation of the final price',async({page,loginPage,homepage,cartpage,log
 
 }) 
 
-test('sort the items by name Z to A',async({page,loginPage,homepage,logoutFixture}) =>{
+test('2.sort the items by name Z to A',async({page,loginPage,homepage,logoutFixture}) =>{
    await expect(page).toHaveTitle("Swag Labs");
+   await page.waitForURL('**/inventory.html');
    // Sort items by name Z to A
    await homepage.sortTheItems("za");
    await console.log("Items sorted successfully");
@@ -28,9 +29,11 @@ test('sort the items by name Z to A',async({page,loginPage,homepage,logoutFixtur
    expect(productNames).toEqual(sorted);
 })
 
-test('validation of login failed',async({FailedLoginPage}) =>{
+test('3.validation of login failed',async({FailedLoginPage}) =>{
    await FailedLoginPage.loginapplicationWithInvalidCredentials("standard_user1","secret_sauce1");
    const errorMsg = await FailedLoginPage.getLoginErrorMessage();
    console.log('Actual error message:', errorMsg);
    await expect(errorMsg).toContain("Epic sadface: Username and password do not match any user in this service");
 })
+
+});
