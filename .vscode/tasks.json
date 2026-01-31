@@ -1,0 +1,56 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build, Run Tests, and Generate Report",
+			"type": "shell",
+			"command": "npx playwright install && npx tsc && npx playwright test",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Build, Run Tests, and Generate Report",
+			"type": "shell",
+			"command": "npx playwright install; npx tsc; npx playwright test",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Build, Run Tests, and Generate Report",
+			"type": "shell",
+			"command": "npx playwright install; npx tsc; npx playwright test",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Install Playwright Browsers",
+			"type": "shell",
+			"command": "npx playwright install",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "TypeScript Build",
+			"type": "shell",
+			"command": "npx tsc",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Run Playwright Tests",
+			"type": "shell",
+			"command": "npx playwright test",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		}
+	]
+}
