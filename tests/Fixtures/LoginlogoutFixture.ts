@@ -22,7 +22,7 @@ export const test = basetest.extend<LoginDetailsFixture>({
       await use(logoutFixture);
       await logoutFixture.logoutTheApplication();
       await console.log("Logout successful");
-      //await page.close();
+      await page.close();
     },
 
     FailedLoginPage : async({page},use)=>

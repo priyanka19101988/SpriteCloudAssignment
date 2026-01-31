@@ -1,6 +1,7 @@
 import { test, expect, request } from '@playwright/test';
+import {userConfig}  from "../tests/Config/userConfig";
 
-const BASE_URL = 'https://fakestoreapi.com';
+const BASE_URL = userConfig.base_url;
 
 test.describe('FakeStoreAPI E2E Scenarios', () => {
   test('1. Perform a successful login', async () => {

@@ -19,12 +19,9 @@ test('1.validation of the final price',async({page,loginPage,homepage,cartpage,l
 test('2.sort the items by name Z to A',async({page,loginPage,homepage,logoutFixture}) =>{
    await expect(page).toHaveTitle("Swag Labs");
    await page.waitForURL('**/inventory.html');
-   // Sort items by name Z to A
    await homepage.sortTheItems("za");
    await console.log("Items sorted successfully");
-   // Validate the first and last product names after sorting
    const productNames = await homepage.page.locator('.inventory_item_name').allTextContents();
-   // Check that the array is sorted in descending order
    const sorted = [...productNames].sort((a, b) => b.localeCompare(a));
    expect(productNames).toEqual(sorted);
 })

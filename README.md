@@ -58,14 +58,5 @@ SpriteCloudAssignment/
 - [Node.js](https://nodejs.org/)
 - [GitHub Copilot](https://github.com/features/copilot) (AI-powered code completion and suggestions)
 
-## AI Usage
 
-This framework was developed and improved using GitHub Copilot, an AI-powered coding assistant. Copilot provided code suggestions, automation, and best practices throughout the development process.
 
-## Author
-
-- Your Name
-
----
-
-Feel free to contribute or raise issues to improve this framework!

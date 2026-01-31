@@ -7,5 +7,6 @@ export const userConfig = {
         password : 'secret_sauce'
 
 
-    }
+    },
+    base_url : 'https://fakestoreapi.com'
 }

@@ -27,9 +27,7 @@ HomePage{
     }
 
     async sortTheItems(sortBy : string){
-        //await this.sortDropDown.waitFor({ state: 'visible' });
         await this.sortDropDown.selectOption({ value: sortBy });
-    
     }
 
     async clickOnCartIcon(){
