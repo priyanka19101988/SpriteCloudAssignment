@@ -14,7 +14,7 @@ export default defineConfig({
     ['html', { outputFolder: 'playwright-report', open: 'never' }]
   ],
   use: {
-    headless: false,
+    headless: true,
     trace: 'on-first-retry',
   },
 
