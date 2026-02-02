@@ -58,5 +58,7 @@ SpriteCloudAssignment/
 - [Node.js](https://nodejs.org/)
 - [GitHub Copilot](https://github.com/features/copilot) (AI-powered code completion and suggestions)
 
+Note: All UI and API test scripts execute successfully in the local environment, and the test execution report (index.html) is attached for reference.In the server environment, UI test scripts run successfully; however, API test scripts are failing. The failures indicate that the connection to the external API endpoint (https://fakestoreapi.com) is not being successfully established or is being blocked, resulting in 403 (Forbidden) access-related errors.
+
 
 
