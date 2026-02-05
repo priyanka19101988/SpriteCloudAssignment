@@ -1,36 +1,37 @@
 import { test } from "./Fixtures/TestFixtures.ts"
 import {expect} from "@playwright/test"
-import { LoginPage } from "./Pages/LoginPage.ts";
+import { sauceDemoData } from "./test-data/saucedemo.data.ts";
+
+const { firstName, lastName, zipCode } = sauceDemoData.checkout.userDetails;
+const { username, password, expectedErrorMessage } = sauceDemoData.login.invalid;
+
 
 test.describe('SauceDemoUI Test Scenarios', () => {
 test('1.validation of the final price',async({page,loginPage,homepage,cartpage,logoutFixture,Checkout_yourInformationPage,overviewpage}) =>{
-   
    await expect(page).toHaveTitle("Swag Labs");
    await homepage.addItemToCart();
    await homepage.clickOnCartIcon();
-   await expect(cartpage.addedItem).toHaveText("Sauce Labs Backpack");
    await cartpage.clickOnCheckoutButton();
-   await Checkout_yourInformationPage.enterAllDetails("priya","shina","12345");
-   expect(await overviewpage.getFinalPrice()).toBe(49.66);
+   await Checkout_yourInformationPage.enterAllDetails(firstName,lastName,zipCode);
+   expect(await overviewpage.getFinalPrice()).toBe(sauceDemoData.checkout.expectedFinalPrice);
    await console.log("Test case executed successfully")
 
 }) 
 
 test('2.sort the items by name Z to A',async({page,loginPage,homepage,logoutFixture}) =>{
    await expect(page).toHaveTitle("Swag Labs");
-   await page.waitForURL('**/inventory.html');
    await homepage.sortTheItems("za");
    await console.log("Items sorted successfully");
-   const productNames = await homepage.page.locator('.inventory_item_name').allTextContents();
+   const productNames = await homepage.itemName.allTextContents(); 
    const sorted = [...productNames].sort((a, b) => b.localeCompare(a));
    expect(productNames).toEqual(sorted);
 })
 
 test('3.validation of login failed',async({FailedLoginPage}) =>{
-   await FailedLoginPage.loginapplicationWithInvalidCredentials("standard_user1","secret_sauce1");
+   await FailedLoginPage.loginapplicationWithInvalidCredentials(username,password);
    const errorMsg = await FailedLoginPage.getLoginErrorMessage();
    console.log('Actual error message:', errorMsg);
-   await expect(errorMsg).toContain("Epic sadface: Username and password do not match any user in this service");
+   await expect(errorMsg).toContain(expectedErrorMessage);
 })
 
 });

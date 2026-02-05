@@ -5,8 +5,5 @@ export const userConfig = {
     Credentials : {
         username : 'standard_user',
         password : 'secret_sauce'
-
-
-    },
-    base_url : 'https://fakestoreapi.com'
+    }   
 }
