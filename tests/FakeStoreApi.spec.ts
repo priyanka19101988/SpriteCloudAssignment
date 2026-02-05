@@ -17,13 +17,18 @@ const BASE_URL = fakeStoreData.baseUrl;
 
   test('2. Get a product and validate its content', async () => {
     const context = await request.newContext();
-    const response = await context.get(`${BASE_URL}/products/${fakeStoreData.product.validProductId}`);
+    const response = await context.get(`${BASE_URL}/products/${fakeStoreData.product.validProduct.id}`);
     expect(response.ok()).toBeTruthy();
     const product = await response.json();
-    expect(product).toHaveProperty('id', fakeStoreData.product.validProductId);
-    expect(product).toHaveProperty('title');
-    expect(product).toHaveProperty('price');
-    console.log('Product details:', product);
+    expect(product).toHaveProperty('id', fakeStoreData.product.validProduct.id);
+    expect(product).toHaveProperty('title', fakeStoreData.product.validProduct.title);
+    expect(product).toHaveProperty('price', fakeStoreData.product.validProduct.price);
+    expect(product).toHaveProperty('description', fakeStoreData.product.validProduct.description);
+    expect(product).toHaveProperty('category', fakeStoreData.product.validProduct.category);
+    expect(product).toHaveProperty('image', fakeStoreData.product.validProduct.image);
+    expect(product).toHaveProperty('rating');
+    expect(product.rating).toHaveProperty('rate', fakeStoreData.product.validProduct.rating.rate);
+    expect(product.rating).toHaveProperty('count', fakeStoreData.product.validProduct.rating.count);
   });
 
   test('3. Create a new cart with an existing product via the API', async () => {
