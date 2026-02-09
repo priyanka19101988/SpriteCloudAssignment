@@ -1,6 +1,5 @@
 import { test, expect, request } from '@playwright/test';
-import { fakeStoreData } from './test-data/fakestore.data';
-
+import { fakeStoreData } from '../../test-data/fakestore.data.ts';
 test.describe('FakeStoreAPI E2E Scenarios', () => {
 const BASE_URL = fakeStoreData.baseUrl;
   test('1. Perform a successful login', async () => {

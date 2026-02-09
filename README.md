@@ -1,4 +1,4 @@
-# SpriteCloudAssignment Framework
+# PlaywrightDemo
 
 This project is an end-to-end (E2E) and API testing framework built using [Playwright](https://playwright.dev/) for UI automation and API validation. It is designed for robust, maintainable, and scalable test automation of web applications and REST APIs.
 
@@ -17,7 +17,7 @@ This project is an end-to-end (E2E) and API testing framework built using [Playw
 ## Project Structure
 
 ```
-SpriteCloudAssignment/
+PlaywrightDemo/
 ├── playwright.config.ts         # Playwright configuration
 ├── package.json                 # Project dependencies and scripts
 ├── tests/

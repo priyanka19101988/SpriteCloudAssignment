@@ -1,8 +1,8 @@
 import{test as basetest} from "../Fixtures/LoginlogoutFixture";
-import { HomePage } from "../Pages/HomePage";
-import { CartPage } from "../Pages/CartPage";
-import { Checkout_yourInformationPage } from "../Pages/Checkout_yourInformationPage";
-import { OverviewPage } from "../Pages/overviewPage";
+import { HomePage } from "../../Pages/HomePage";
+import { CartPage } from "../../Pages/CartPage";
+import { Checkout_yourInformationPage } from "../../Pages/Checkout_yourInformationPage";
+import { OverviewPage } from "../../Pages/overviewPage";
 
 type applicationPage = {
     homepage  : HomePage ;

@@ -1,6 +1,6 @@
 import {test as basetest} from "@playwright/test"
-import {LoginPage} from "../Pages/LoginPage";
-import {CartPage} from "../Pages/CartPage";
+import { LoginPage } from "../../Pages/LoginPage";
+import { CartPage } from "../../Pages/CartPage";
 
 type LoginDetailsFixture = {
     loginPage : LoginPage;

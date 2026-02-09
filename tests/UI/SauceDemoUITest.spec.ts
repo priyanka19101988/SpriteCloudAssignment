@@ -1,6 +1,6 @@
-import { test } from "./Fixtures/TestFixtures.ts"
+import { test } from "../Fixtures/TestFixtures.ts";
 import {expect} from "@playwright/test"
-import { sauceDemoData } from "./test-data/saucedemo.data.ts";
+import { sauceDemoData } from "../../test-data/saucedemo.data.ts";
 
 const { firstName, lastName, zipCode } = sauceDemoData.checkout.userDetails;
 const { username, password, expectedErrorMessage } = sauceDemoData.login.invalid;
